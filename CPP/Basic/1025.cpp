@@ -26,9 +26,13 @@ int main(){
     bool isPrint = false;
     while(n >= k){
         for(int i = 0; i < k; ++i){
-           s.push(pre);
-           pre = a[pre][1];
-           n--;
+            while(a[pre][4] != 1){
+                pre = a[pre][1];
+                n--;
+            }
+            s.push(pre);
+            pre = a[pre][1];
+            n--;
         }
         for(int i = 0; i < k; ++i){
             int tem = s.top();
